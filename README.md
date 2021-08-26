@@ -14,7 +14,7 @@ This is a flash card game that is designed to help the user improve their knowle
 
 ## Wire Frames
 
-> Copy and paste or drag and drop your images here.
+![Flashcards Wireframe Main Page](https://github.com/itsreallydrew/unit-1-project/blob/main/flashcards-wireframe-mainpage.png)
 
 ## User Stories
 
