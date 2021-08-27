@@ -21,10 +21,12 @@ body {
 
 h1 {
 	text-align: center;
+	margin-top: 20px;
 }
 div.game-area {
 	display: flex;
 	justify-content: center;
+	margin-top: 10%;
 }
 div.text-display {
 	height: 350px;
@@ -34,6 +36,7 @@ div.text-display {
 div.cardControls {
 	display: flex;
 	justify-content: space-between;
+	margin: 0px 250px 0px 250px;
 }
 p {
 	text-align: center;
@@ -62,4 +65,18 @@ p {
 
 #definition {
 	text-align: center;
+}
+
+@media (max-width: 600px) {
+	h1 {
+		text-align: center;
+	}
+	div.game-area {
+		margin: 0px 15px 0px 15px;
+	}
+	div.cardControls {
+		display: flex;
+		margin: 0 auto;
+		justify-content: space-between;
+	}
 }
