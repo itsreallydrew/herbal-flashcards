@@ -17,6 +17,7 @@
 
 const next = document.querySelector('#next');
 const prev = document.querySelector('#previous');
+const shuffle = document.querySelector('#shuffle');
 const display = document.querySelector('.text-display');
 const term = document.querySelector('#term');
 let definition = document.querySelector('#definition');
@@ -29,6 +30,7 @@ display.addEventListener('click', flipCard);
 // });
 next.addEventListener('click', nextCard);
 prev.addEventListener('click', prevCard);
+shuffle.addEventListener('click', shuffleCards);
 
 // Pseudocode Functions
 
@@ -82,16 +84,13 @@ function decrementCount(params) {
 	// decrease count by 1 per each 'previous' arrow click
 }
 
-// IF the user gets to the end of the stack
-// THEN start the count over -- count must start at 1
-function cardCarousel(params) {
-	//
-}
-
-// IF a new card is added
-// THEN increase the TOTAL by 1
-function cardTotal(params) {
-	// calculate total number of cards and increment by # cards added
+// Shuffle function
+function shuffleCards(params) {
+	// choose random number between 0 and length of terms array
+	// assign that number to randomCard value
+	randomCard = Math.floor(Math.random() * terms.length);
+	// run setCardText function with randomCard value
+	setCardText(randomCard);
 }
 
 // On each CLICK clear out DIV
