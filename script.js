@@ -61,9 +61,21 @@ function cardTotal(params) {
 
 // On each CLICK clear out DIV
 // THEN add the new PARAGRAPH item
-function clearCard(params) {
-	// clear the text of the card to allow for next piece of info to be displayed
-}
+// On second thought this may not be necessary because the only info that needs to be displayed is the next term/definition so clearing the card isn't necessary
+// function clearCard(params) {
+// clear the text of the card to allow for next piece of info to be displayed
+// }
 
 // Total cards in stack = terms.length
 // currentCardCount = terms[i]
+
+const next = document.querySelector('#next');
+const term = document.querySelector('#term');
+const display = document.querySelector('.text-display');
+const definition = document.querySelector('#definition');
+
+display.addEventListener('click', (event) => {
+	console.log(event);
+	term.classList.toggle('hidden');
+	definition.classList.toggle('hidden');
+});

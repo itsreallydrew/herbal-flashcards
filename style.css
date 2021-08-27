@@ -15,6 +15,10 @@ The term should be displayed initially.
 The definition should be on the "back" side.
 */
 
+body {
+	margin: 0 auto;
+}
+
 h1 {
 	text-align: center;
 }
@@ -31,6 +35,27 @@ p {
 	text-align: center;
 }
 .button {
-	margin: 10px;
+	margin: 15px;
 	padding: 20px;
+	bottom: 0px;
+}
+
+.hidden {
+	display: none;
+}
+
+#previous {
+	align-self: flex-end;
+}
+
+#next {
+	align-self: flex-end;
+}
+
+#term {
+	text-align: center;
+}
+
+#definition {
+	text-align: center;
 }
