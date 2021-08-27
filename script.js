@@ -11,24 +11,53 @@
 - Have one part of the HTML have an #id of "term" and the other of "definition"
 - Create a class list for each new deck item that is added (stretch goal)
 - Possibly add a quiz mode (stretch goal)
-- Create a shuffle option 
-
+- Create a shuffle option (stretch goal)
 
 */
+
+const next = document.querySelector('#next');
+const prev = document.querySelector('#previous');
+const display = document.querySelector('.text-display');
+const term = document.querySelector('#term');
+let definition = document.querySelector('#definition');
+let currentCard = 0;
+let previousCard = 0;
+
+display.addEventListener('click', flipCard);
+// display.addEventListener('click', (event) => {
+// 	console.log(event);
+// });
+next.addEventListener('click', nextCard);
 
 // Pseudocode Functions
 
 // IF the user clicks on the card
 // THEN the card will flip to the other side and reveal the information
-function flipCard(params) {
+function flipCard(event) {
 	// when the card is clicked it flips to the other side
 	// have the definition side be hidden (toggle) and on click/flip hide the term
+	term.classList.toggle('hidden');
+	definition.classList.toggle('hidden');
 }
 
 // IF the user clicks an arrow
 // THEN the next card or the previous card will display
-function nextCard(params) {
+function nextCard(event) {
 	// when the 'next' button is clicked the next card in the stack displays
+	console.log(event);
+	// currentCard = previousCard;
+	currentCard += 1;
+	if (currentCard >= terms.length) {
+		currentCard = 0;
+		// console.log(currentCard);
+	}
+	setCardText(currentCard);
+}
+
+function setCardText(currentCard) {
+	// when next is clicked the the content in the paragraph should display the content coordinating to the index of the array
+	term.innerText = terms[currentCard].term;
+	definition.innerText = terms[currentCard].definition;
 }
 
 function prevCard(params) {
@@ -68,14 +97,3 @@ function cardTotal(params) {
 
 // Total cards in stack = terms.length
 // currentCardCount = terms[i]
-
-const next = document.querySelector('#next');
-const term = document.querySelector('#term');
-const display = document.querySelector('.text-display');
-const definition = document.querySelector('#definition');
-
-display.addEventListener('click', (event) => {
-	console.log(event);
-	term.classList.toggle('hidden');
-	definition.classList.toggle('hidden');
-});
