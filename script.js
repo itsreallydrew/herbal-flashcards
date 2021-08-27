@@ -28,6 +28,7 @@ display.addEventListener('click', flipCard);
 // 	console.log(event);
 // });
 next.addEventListener('click', nextCard);
+prev.addEventListener('click', prevCard);
 
 // Pseudocode Functions
 
@@ -60,8 +61,13 @@ function setCardText(currentCard) {
 	definition.innerText = terms[currentCard].definition;
 }
 
-function prevCard(params) {
+function prevCard(event) {
 	// when the 'prev' button is clicked the previous card will display
+	currentCard -= 1;
+	if (currentCard <= 0) {
+		currentCard = 0;
+	}
+	setCardText(currentCard);
 }
 
 // IF the user clicks the next arrow
