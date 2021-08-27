@@ -1,0 +1,36 @@
+/* CSS Pseudocode */
+
+/* The area where the card is displayed should be in the center of the page.
+
+There should be an arrow at each end of the bottom of the card.
+
+One arrow will be for 'next' and the other arrow for 'previous'.
+
+The text should be displayed in the center of the card area.
+
+The card should "flip" when clicked.
+
+The term should be displayed initially.
+
+The definition should be on the "back" side.
+*/
+
+h1 {
+	text-align: center;
+}
+div.game-area {
+	display: flex;
+	justify-content: center;
+}
+div.text-display {
+	height: 350px;
+	width: 700px;
+	border: 3px solid black;
+}
+p {
+	text-align: center;
+}
+.button {
+	margin: 10px;
+	padding: 20px;
+}
