@@ -11,6 +11,21 @@ This information will be referenced for the following:
 
 let terms = [
 	{
+		term: 'Cooling',
+		definition:
+			'Herbs that sedate or slow down metabolism to decrease energy production while cooling and soothing irritation and redness.',
+	},
+	{
+		term: 'Warming',
+		definition:
+			'Herbs that stimulate or speed up metabolism. Increases energy production and brings warmth and vitality to tissues.',
+	},
+	{
+		term: 'Neutral',
+		definition:
+			'Herbs that are neither warm nor cool. They do not have a strong effect on circulation or metabolism.',
+	},
+	{
 		term: 'Drying',
 		definition:
 			'Removes excess fluid from tissue. Relieves conditions of dampness and swelling.',
@@ -31,8 +46,13 @@ let terms = [
 			'Provides essential nutrients that aid tissue healing, improving structure and function.',
 	},
 	{
-		term: 'Neutral',
+		term: 'Constricting',
 		definition:
-			'Herbs that are neither warm nor cool. They do not have a strong effect on circulation or metabolism.',
+			'Herbs that increase tone or tension in tissues. Stops excess flow and secretions.',
+	},
+	{
+		term: 'Relaxing',
+		definition:
+			'Herbs that relax muscle cramps and spams, relieving excess tension in tissues and promotes easier flow and movement.',
 	},
 ];

@@ -25,7 +25,7 @@ const totalCards = document.querySelector('#totalCards');
 const curCard = document.querySelector('#curCard');
 let currentCard = 0;
 let previousCard = 0;
-let cardCount = 0;
+let cardCount = 1;
 
 display.addEventListener('click', flipCard);
 // display.addEventListener('click', (event) => {
@@ -36,6 +36,19 @@ prev.addEventListener('click', prevCard);
 shuffle.addEventListener('click', shuffleCards);
 
 init();
+
+function init(params) {
+	setTotal();
+	resetCard();
+	render();
+}
+
+function render(params) {
+	currentCard = 0;
+	cardCount = 1;
+	term.innerText = terms[currentCard].term;
+	definition.innerText = terms[currentCard].definition;
+}
 
 // Pseudocode Functions
 
@@ -72,8 +85,8 @@ function setCardText(currentCard) {
 function prevCard(event) {
 	// when the 'prev' button is clicked the previous card will display
 	currentCard -= 1;
-	if (currentCard <= 0) {
-		currentCard = 0;
+	if (currentCard < 0) {
+		currentCard = terms.length - 1;
 	}
 	setCardText(currentCard);
 	decrementCount();
@@ -84,21 +97,29 @@ function prevCard(event) {
 function incrementCount(params) {
 	// increase count by 1 per each 'next' arrow click
 	cardCount++;
-	curCard.innerText = cardCount;
 	if (cardCount > terms.length) {
-		cardCount = 0;
+		cardCount = 1;
 	}
+	curCard.innerText = cardCount;
 }
 
 // IF the user clicks the previous arrow
 // THEN decrement the counter by 1
 function decrementCount(params) {
 	// decrease count by 1 per each 'previous' arrow click
-	cardCount -= 1;
-	curCard.innerText = cardCount;
-	if (cardCount === terms.length) {
-		cardCount--;
+	// console.log(cardCount);
+	cardCount--;
+	if (!cardCount) {
+		cardCount = 5;
 	}
+	curCard.innerText = cardCount;
+	// if (cardCount > 0 && cardCount <= terms.length) {
+	// 	cardCount--;
+	// 	// } else if (cardCount < 0) {
+	// 	// 	cardCount = terms.length - 1;
+	// 	// }
+	// 	curCard.innerText = cardCount;
+	// }
 }
 
 // Shuffle function
@@ -114,15 +135,11 @@ function shuffleCards(params) {
 function setTotal(params) {
 	// total will equal length of array
 	totalCards.innerText = terms.length;
+	return totalCards.innerText;
 }
 
 function resetCard(params) {
-	curCard.innerText = 0;
-}
-
-function init(params) {
-	setTotal();
-	resetCard();
+	curCard.innerText = 1;
 }
 
 // On each CLICK clear out DIV
