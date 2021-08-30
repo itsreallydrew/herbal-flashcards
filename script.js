@@ -23,9 +23,41 @@ const term = document.querySelector('#term');
 const definition = document.querySelector('#definition');
 const totalCards = document.querySelector('#totalCards');
 const curCard = document.querySelector('#curCard');
+// const catList = document.querySelector('.categoryList');
 let currentCard = 0;
 let previousCard = 0;
 let cardCount = 1;
+// let arr;
+
+// function energeticsStudy(event) {
+// 	let arr = allTerms.filter((allTerms) => allTerms.category.length === 9);
+// }
+// function herbTypesStudy(event) {
+// 	let arr = allTerms.filter(
+// 		(allTerms) => allTerms[i].category === 'herb types'
+// 	);
+// }
+// function tissueStatesStudy(event) {
+// 	let arr = allTerms.filter(
+// 		(allTerms) => allTerms[i].category === 'tissue states'
+// 	);
+// }
+
+// catList.addEventListener('click', (event) => {
+// 	if (event.target.id === 'energetics') {
+// 		energeticsStudy();
+// 	}
+// 	console.log(event);
+// 	console.log(arr);
+// 	if (event.target.id === 'herbCats') {
+// 		herbTypesStudy();
+// 	}
+// 	if (event.target.id === 'tissueStates') {
+// 		tissueStatesStudy();
+// 	}
+// 	console.log(arr);
+// 	return arr;
+// });
 
 display.addEventListener('click', flipCard);
 // display.addEventListener('click', (event) => {
@@ -46,8 +78,8 @@ function init(params) {
 function render(params) {
 	currentCard = 0;
 	cardCount = 1;
-	term.innerText = terms[currentCard].term;
-	definition.innerText = terms[currentCard].definition;
+	term.innerText = energetics[currentCard].term;
+	definition.innerText = energetics[currentCard].definition;
 }
 
 // Pseudocode Functions
@@ -63,14 +95,14 @@ function flipCard(event) {
 
 // IF the user clicks an arrow
 // THEN the next card or the previous card will display
-function nextCard(event) {
+function nextCard(arr) {
 	// when the 'next' button is clicked the next card in the stack displays
-	console.log(event);
+	// console.log(event);
 	// currentCard = previousCard;
+	// console.log(arr);
 	currentCard += 1;
-	if (currentCard >= terms.length) {
+	if (currentCard >= energetics.length) {
 		currentCard = 0;
-		// console.log(currentCard);
 	}
 	setCardText(currentCard);
 	incrementCount();
@@ -78,15 +110,15 @@ function nextCard(event) {
 
 function setCardText(currentCard) {
 	// when next is clicked the the content in the paragraph should display the content coordinating to the index of the array
-	term.innerText = terms[currentCard].term;
-	definition.innerText = terms[currentCard].definition;
+	term.innerText = energetics[currentCard].term;
+	definition.innerText = energetics[currentCard].definition;
 }
 
-function prevCard(event) {
+function prevCard(arr) {
 	// when the 'prev' button is clicked the previous card will display
 	currentCard -= 1;
 	if (currentCard < 0) {
-		currentCard = terms.length - 1;
+		currentCard = energetics.length - 1;
 	}
 	setCardText(currentCard);
 	decrementCount();
@@ -97,7 +129,7 @@ function prevCard(event) {
 function incrementCount(params) {
 	// increase count by 1 per each 'next' arrow click
 	cardCount++;
-	if (cardCount > terms.length) {
+	if (cardCount > energetics.length) {
 		cardCount = 1;
 	}
 	curCard.innerText = cardCount;
@@ -126,7 +158,7 @@ function decrementCount(params) {
 function shuffleCards(params) {
 	// choose random number between 0 and length of terms array
 	// assign that number to randomCard value
-	randomCard = Math.floor(Math.random() * terms.length);
+	randomCard = Math.floor(Math.random() * energetics.length);
 	// run setCardText function with randomCard value
 	setCardText(randomCard);
 	incrementCount();
@@ -134,7 +166,7 @@ function shuffleCards(params) {
 
 function setTotal(params) {
 	// total will equal length of array
-	totalCards.innerText = terms.length;
+	totalCards.innerText = energetics.length;
 	return totalCards.innerText;
 }
 
