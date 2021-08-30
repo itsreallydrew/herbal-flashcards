@@ -71,12 +71,24 @@ p {
 	h1 {
 		text-align: center;
 	}
+	p {
+		font-size: 40px;
+		text-align: justify;
+		padding: 5px;
+	}
 	div.game-area {
-		margin: 0px 15px 0px 15px;
+		margin: 100px 15px 0px 15px;
 	}
 	div.cardControls {
 		display: flex;
-		margin: 0 auto;
+		margin: 20px 0px 0px 0px;
 		justify-content: space-between;
+	}
+	#term {
+		padding: 90px 0px 0px 0px;
+	}
+	#definition {
+		padding: 20px 15px 0px 15px;
+		line-height: 1.3;
 	}
 }

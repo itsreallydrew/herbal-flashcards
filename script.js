@@ -20,9 +20,12 @@ const prev = document.querySelector('#previous');
 const shuffle = document.querySelector('#shuffle');
 const display = document.querySelector('.text-display');
 const term = document.querySelector('#term');
-let definition = document.querySelector('#definition');
+const definition = document.querySelector('#definition');
+const totalCards = document.querySelector('#totalCards');
+const curCard = document.querySelector('#curCard');
 let currentCard = 0;
 let previousCard = 0;
+let cardCount = 0;
 
 display.addEventListener('click', flipCard);
 // display.addEventListener('click', (event) => {
@@ -31,6 +34,8 @@ display.addEventListener('click', flipCard);
 next.addEventListener('click', nextCard);
 prev.addEventListener('click', prevCard);
 shuffle.addEventListener('click', shuffleCards);
+
+init();
 
 // Pseudocode Functions
 
@@ -55,6 +60,7 @@ function nextCard(event) {
 		// console.log(currentCard);
 	}
 	setCardText(currentCard);
+	incrementCount();
 }
 
 function setCardText(currentCard) {
@@ -70,18 +76,29 @@ function prevCard(event) {
 		currentCard = 0;
 	}
 	setCardText(currentCard);
+	decrementCount();
 }
 
 // IF the user clicks the next arrow
 // THEN increment the counter by 1
 function incrementCount(params) {
 	// increase count by 1 per each 'next' arrow click
+	cardCount++;
+	curCard.innerText = cardCount;
+	if (cardCount > terms.length) {
+		cardCount = 0;
+	}
 }
 
 // IF the user clicks the previous arrow
 // THEN decrement the counter by 1
 function decrementCount(params) {
 	// decrease count by 1 per each 'previous' arrow click
+	cardCount -= 1;
+	curCard.innerText = cardCount;
+	if (cardCount === terms.length) {
+		cardCount--;
+	}
 }
 
 // Shuffle function
@@ -91,6 +108,21 @@ function shuffleCards(params) {
 	randomCard = Math.floor(Math.random() * terms.length);
 	// run setCardText function with randomCard value
 	setCardText(randomCard);
+	incrementCount();
+}
+
+function setTotal(params) {
+	// total will equal length of array
+	totalCards.innerText = terms.length;
+}
+
+function resetCard(params) {
+	curCard.innerText = 0;
+}
+
+function init(params) {
+	setTotal();
+	resetCard();
 }
 
 // On each CLICK clear out DIV
