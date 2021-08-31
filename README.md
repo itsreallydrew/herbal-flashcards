@@ -24,7 +24,7 @@ Initially, I only put myself in mind as someone who would be using this applicat
 
 After looking at some projects for insight and inspiration, I went to some websites that have online flashcards and inspected the elements on their page. I started to develop a mental framework for how I could begin to build my own version of a flashcard app while incorporating different aspects.
 
-The biggest challenge in my mind was to find out a way to get the text to dynamically update when cards were being changed, whether moving forwards or backwards. This required me to write a set of functions to a set of callback functions that would work with each other to achieve this goal.
+The biggest challenge in my mind was to find out a way to get the text to dynamically update when cards were being changed, whether moving forwards or backwards. This required me to write a set of callback functions that would work with each other to achieve this goal.
 
 This is my initial iteration of the project. I want to learn to build it out more and make it more complex as I acquire more knowledge throughout my growth as a full stack developer.
 
