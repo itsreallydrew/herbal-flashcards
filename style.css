@@ -20,7 +20,7 @@ The definition should be on the "back" side.
 body {
 	margin: 0 auto;
 	background-color: ghostwhite;
-	background: url('/assets/samee-anderson-3tBdYnx_sWA-unsplash.jpg');
+	background: url('./assets/samee-anderson-3tBdYnx_sWA-unsplash.jpg');
 	background-size: cover;
 }
 
