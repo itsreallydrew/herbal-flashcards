@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Flashcards</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<h1>Herbal Flashcards</h1>
+<!-- <form>
+    <input type="text" placeholder="Enter Category">
+    <input type="submit">
+</form> -->
+<div class="game-area">
+    <div class="topControls">
+        <p id="cardCounter">
+            <span id="curCard"></span>
+            /
+            <span id="totalCards"></span>
+        </p>
+        <!-- <div class="categoryList">
+            <button id="energetics">Energetics</button>
+            <button id="herbCats">Herb Types</button>
+            <button id="tissueStates">Tissue States</button>
+        </div> -->
+    </div>
+    <div class="text-display">
+        <p id="term"></p>
+        <p id="definition" class="hidden"></p>
+        
+    </div>
+</div>
+<div class="cardControls">
+        <img class="button" id="previous" src="./assets/left-arrow.png" alt="green arrow pointing left">
+        <img class="button" id="shuffle" src="./assets/shuffle-arrows-svgrepo-com.png" alt="">
+        <img class="button" id="next" src="./assets/green-2304007_640.png" alt="green arrow pointing right">
+    </div>
+    <p class="instructions" >Instructions: Use arrows to change cards. Click on the card to flip to the other side.</p>
+    <script src="./script2.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
