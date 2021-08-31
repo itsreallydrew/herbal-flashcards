@@ -23,46 +23,11 @@ const term = document.querySelector('#term');
 const definition = document.querySelector('#definition');
 const totalCards = document.querySelector('#totalCards');
 const curCard = document.querySelector('#curCard');
-// const catList = document.querySelector('.categoryList');
 let currentCard = 0;
 let previousCard = 0;
 let cardCount = 1;
-// let arr;
-
-// function energeticsStudy(event) {
-// 	let arr = allTerms.filter((allTerms) => allTerms.category.length === 9);
-// }
-// function herbTypesStudy(event) {
-// 	let arr = allTerms.filter(
-// 		(allTerms) => allTerms[i].category === 'herb types'
-// 	);
-// }
-// function tissueStatesStudy(event) {
-// 	let arr = allTerms.filter(
-// 		(allTerms) => allTerms[i].category === 'tissue states'
-// 	);
-// }
-
-// catList.addEventListener('click', (event) => {
-// 	if (event.target.id === 'energetics') {
-// 		energeticsStudy();
-// 	}
-// 	console.log(event);
-// 	console.log(arr);
-// 	if (event.target.id === 'herbCats') {
-// 		herbTypesStudy();
-// 	}
-// 	if (event.target.id === 'tissueStates') {
-// 		tissueStatesStudy();
-// 	}
-// 	console.log(arr);
-// 	return arr;
-// });
 
 display.addEventListener('click', flipCard);
-// display.addEventListener('click', (event) => {
-// 	console.log(event);
-// });
 next.addEventListener('click', nextCard);
 prev.addEventListener('click', prevCard);
 shuffle.addEventListener('click', shuffleCards);
@@ -95,11 +60,8 @@ function flipCard(event) {
 
 // IF the user clicks an arrow
 // THEN the next card or the previous card will display
-function nextCard(arr) {
+function nextCard() {
 	// when the 'next' button is clicked the next card in the stack displays
-	// console.log(event);
-	// currentCard = previousCard;
-	// console.log(arr);
 	currentCard += 1;
 	if (currentCard >= energetics.length) {
 		currentCard = 0;
@@ -139,19 +101,11 @@ function incrementCount(params) {
 // THEN decrement the counter by 1
 function decrementCount(params) {
 	// decrease count by 1 per each 'previous' arrow click
-	// console.log(cardCount);
 	cardCount--;
 	if (!cardCount) {
 		cardCount = 5;
 	}
 	curCard.innerText = cardCount;
-	// if (cardCount > 0 && cardCount <= terms.length) {
-	// 	cardCount--;
-	// 	// } else if (cardCount < 0) {
-	// 	// 	cardCount = terms.length - 1;
-	// 	// }
-	// 	curCard.innerText = cardCount;
-	// }
 }
 
 // Shuffle function
@@ -173,13 +127,3 @@ function setTotal(params) {
 function resetCard(params) {
 	curCard.innerText = 1;
 }
-
-// On each CLICK clear out DIV
-// THEN add the new PARAGRAPH item
-// On second thought this may not be necessary because the only info that needs to be displayed is the next term/definition so clearing the card isn't necessary
-// function clearCard(params) {
-// clear the text of the card to allow for next piece of info to be displayed
-// }
-
-// Total cards in stack = terms.length
-// currentCardCount = terms[i]

@@ -20,12 +20,15 @@ The definition should be on the "back" side.
 body {
 	margin: 0 auto;
 	background-color: ghostwhite;
+	background: url('/assets/samee-anderson-3tBdYnx_sWA-unsplash.jpg');
+	background-size: cover;
 }
 
 h1 {
 	text-align: center;
 	font-family: 'Kotta One', serif;
 	font-size: 50px;
+	text-shadow: 2px 2px whitesmoke;
 }
 p {
 	text-align: center;
@@ -44,6 +47,7 @@ p {
 	width: 700px;
 	border: 5px solid black;
 	border-radius: 30px;
+	background: whitesmoke;
 }
 .cardControls {
 	display: flex;
@@ -60,7 +64,9 @@ p {
 	font-size: 30px;
 	position: absolute;
 	bottom: 5px;
-	left: 230px;
+	bottom: 0px;
+	left: 25%;
+	right: 25%;
 	text-align: justify;
 }
 
@@ -110,6 +116,9 @@ p {
 }
 
 @media (max-width: 600px) {
+	body {
+		background-size: 170%;
+	}
 	h1 {
 		text-align: center;
 	}
@@ -135,15 +144,17 @@ p {
 		font-size: 20px;
 		position: absolute;
 		text-align: justify;
+		background: whitesmoke;
+		left: 25%;
 	}
 	#term {
-		padding: 90px 0px 0px 0px;
-		padding: 15px;
-		font-size: 70px;
+		padding: 60px 15px 0px 15px;
+		font-size: 65px;
 	}
 	#definition {
 		padding: 20px 15px 0px 15px;
 		line-height: 1.3;
+		font-size: 30px;
 	}
 	#previous,
 	#shuffle,
