@@ -14,7 +14,7 @@ The term should be displayed initially.
 
 The definition should be on the "back" side.
 */
-
+/* 
 @import url('https://fonts.googleapis.com/css2?family=Kotta+One&display=swap');
 
 body {
@@ -135,6 +135,7 @@ p {
 		display: flex;
 		margin: 20px 0px 0px 0px;
 		justify-content: space-between;
+		position: relative;
 	}
 	div.topControls {
 		top: -80px;
@@ -142,10 +143,207 @@ p {
 	.instructions {
 		right: 20px;
 		font-size: 20px;
-		position: absolute;
+		position: relative;
 		text-align: justify;
 		background: whitesmoke;
 		left: 25%;
+		margin: 0 auto;
+	}
+	#term {
+		padding: 60px 15px 0px 15px;
+		font-size: 65px;
+	}
+	#definition {
+		padding: 20px 15px 0px 15px;
+		line-height: 1.3;
+		font-size: 30px;
+	}
+	#previous,
+	#shuffle,
+	#next {
+		cursor: pointer;
+		transition: all 0.1s;
+	}
+	#previous:hover,
+	#shuffle:hover,
+	#next:hover {
+		transform: scale(1.3);
+	}
+	#previous:active,
+	#shuffle:active,
+	#next:active {
+		transform: scale(0.9);
+	}
+} */
+
+/* CSS Pseudocode */
+
+/* The area where the card is displayed should be in the center of the page.
+
+There should be an arrow at each end of the bottom of the card.
+
+One arrow will be for 'next' and the other arrow for 'previous'.
+
+The text should be displayed in the center of the card area.
+
+The card should "flip" when clicked.
+
+The term should be displayed initially.
+
+The definition should be on the "back" side.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Kotta+One&display=swap');
+
+body {
+	margin: 0 auto;
+	background-color: ghostwhite;
+	background: url('./assets/samee-anderson-3tBdYnx_sWA-unsplash.jpg');
+	background-size: cover;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Kotta One', serif;
+	font-size: 50px;
+	text-shadow: 2px 2px whitesmoke;
+}
+p {
+	text-align: center;
+	font-size: 50px;
+	padding: 10px 15px 0px 15px;
+	line-height: 1.3;
+}
+.game-area {
+	display: flex;
+	justify-content: center;
+	/* margin-top: 10%; */
+	/* position: relative; */
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-content: center;
+}
+.text-display {
+	height: 350px;
+	width: 700px;
+	margin: auto;
+	border: 5px solid black;
+	border-radius: 30px;
+	background: whitesmoke;
+	/* justify-self: flex-end; */
+}
+.cardControls {
+	/* display: flex; */
+	justify-content: space-around;
+	margin: 0px 250px 0px 250px;
+}
+/* .topControls { */
+/* position: absolute; */
+/* top: -130px; */
+/* justify-content: flex-start; */
+/* } */
+
+.instructions {
+	font-size: 30px;
+	position: absolute;
+	bottom: 5px;
+	bottom: 0px;
+	left: 25%;
+	right: 25%;
+	text-align: justify;
+}
+
+.categoryList {
+	justify-content: flex-start;
+}
+
+.button {
+	margin: 15px;
+	padding: 20px;
+	bottom: 0px;
+}
+
+.hidden {
+	display: none;
+}
+
+#previous,
+#shuffle,
+#next {
+	cursor: pointer;
+	transition: all 0.1s;
+}
+#previous:hover,
+#shuffle:hover,
+#next:hover {
+	transform: scale(1.3);
+}
+#previous:active,
+#shuffle:active,
+#next:active {
+	transform: scale(0.9);
+}
+
+#previous,
+#next {
+	align-self: flex-end;
+}
+#term {
+	text-align: center;
+	font-size: 80px;
+}
+
+#definition {
+	text-align: center;
+	font-size: 35px;
+}
+
+@media (max-width: 600px) {
+	body {
+		background-size: 170%;
+	}
+	h1 {
+		text-align: center;
+	}
+	/* p {
+		font-size: 30px;
+		text-align: justify;
+		padding: 3px;
+		line-height: 1.1;
+	} */
+	div.game-area {
+		margin: auto;
+		display: flex;
+		justify-content: center;
+		display: flex;
+		flex-direction: column-reverse;
+		/* align-content: center; */
+	}
+	div.cardControls {
+		display: inline-flex;
+		margin: 0px 10px 0px 10px;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+	}
+	div.topControls {
+		/* display: inline-flex; */
+		justify-self: center;
+		/* top: -450px; */
+	}
+	.instructions {
+		right: 20px;
+		font-size: 20px;
+		position: relative;
+		text-align: justify;
+		background: whitesmoke;
+		left: 25%;
+		margin: 0 auto;
+	}
+	/* div.topControls * {
+		font-size: 15px;
+	} */
+	#shuffle {
+		order: -1;
 	}
 	#term {
 		padding: 60px 15px 0px 15px;
